@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>StreamHub ⚡ Ad-Free WebTorrent Streaming | Watch Magnet Videos Instantly</title>
+  <link rel="icon" href="images/icon.jpeg" type="image/jpeg" />
+  <link rel="shortcut icon" href="images/icon.jpeg" type="image/jpeg" />
+  <meta name="description" content="StreamHub is an ultra-fast, ad-free WebTorrent streaming app. Instantly play torrent videos from magnet links with zero buffering. Powered by advanced WebTorrent tech for fluent playback of MP4 and MKV formats." />
+  <meta name="keywords" content="ad-free torrent streaming, fluent webtorrent player, stream magnet links, watch torrents online, webtorrent app, bufferless streaming, mp4 torrent stream, instant torrent video, streamhub" />
+  <meta name="author" content="StreamHub AI Team" />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://streamhub.vercel.app" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="StreamHub – Smooth & Ad-Free Torrent Streaming" />
+  <meta property="og:description" content="Paste your magnet link and stream torrent videos instantly with no ads, no buffering. Experience ultra-smooth playback via WebTorrent tech." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://streamhub.vercel.app" />
+  <meta property="og:image" content="https://streamhub.vercel.app" />
+  
+  <!-- Twitter Cards -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="StreamHub – Fluent, Ad-Free WebTorrent Streaming" />
+  <meta name="twitter:description" content="StreamHub uses WebTorrent to stream magnet links instantly with no ads and no buffering. The future of torrent playback." />
+  <meta name="twitter:image" content="https://streamhub.vercel.app" />
+
+  <!-- App Identity -->
+  <meta name="theme-color" content="#0f0f1a" />
+  <meta name="application-name" content="StreamHub" />
+  <meta name="mobile-web-app-capable" content="yes" />
+
+  <!-- Icons -->
+<link rel="stylesheet" href="style.css" />
+</head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-YHGRSM6XF5"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-YHGRSM6XF5');
+</script>
+<body>
+    <div id="app">
+        <!-- Header -->
+        <header class="header">
+            <div class="container">
+                <div class="header-content">
+                    <h1 class="logo">MKV 🎬 StreamHub</h1>
+                    <div class="header-info">
+                        <span id="status" class="status">Ready</span>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <main class="main">
+            <div class="container">
+                <!-- Input Section -->
+                <section id="inputSection" class="input-section">
+                    <div class="input-container">
+                        <h2>Stream Any Video from Magnet Links</h2>
+                        <p class="subtitle">Paste a magnet link below and start streaming instantly</p>
+                        
+                        <div class="input-group">
+                            <input 
+                                type="text" 
+                                id="magnetInput" 
+                                class="magnet-input" 
+                                placeholder="magnet:?xt=urn:btih:..."
+                            >
+                            <button id="streamBtn" class="btn-primary">
+                                <span class="btn-text">Stream Now</span>
+                                <span class="btn-icon">▶️</span>
+                            </button>
+                        </div>
+
+                        <!-- Example Magnet Links -->
+                        <div class="examples">
+                            <p>Quick Test Examples:</p>
+                            <div class="example-links">
+                                <button class="example-btn" data-magnet="magnet:?xt=urn:btih:dd8255ecdc7ca55fb0bbf81323d87062db1f6d1c&dn=Big+Buck+Bunny&tr=udp%3A%2F%2Fexplodie.org%3A6969&tr=udp%3A%2F%2Ftracker.coppersurfer.tk%3A6969&tr=udp%3A%2F%2Ftracker.empire-js.us%3A1337&tr=udp%3A%2F%2Ftracker.leechers-paradise.org%3A6969&tr=udp%3A%2F%2Ftracker.opentrackr.org%3A1337&tr=wss%3A%2F%2Ftracker.btorrent.xyz&tr=wss%3A%2F%2Ftracker.fastcast.nz&tr=wss%3A%2F%2Ftracker.openwebtorrent.com">
+                                    Big Buck Bunny (Test)
+                                </button>
+                                <button class="example-btn" data-magnet="magnet:?xt=urn:btih:c9e15763f722f23e98a29decdfae341b98d53056&dn=Cosmos+Laundromat&tr=udp%3A%2F%2Fexplodie.org%3A6969&tr=udp%3A%2F%2Ftracker.coppersurfer.tk%3A6969&tr=udp%3A%2F%2Ftracker.empire-js.us%3A1337&tr=udp%3A%2F%2Ftracker.leechers-paradise.org%3A6969&tr=udp%3A%2F%2Ftracker.opentrackr.org%3A1337&tr=wss%3A%2F%2Ftracker.btorrent.xyz&tr=wss%3A%2F%2Ftracker.fastcast.nz&tr=wss%3A%2F%2Ftracker.openwebtorrent.com">
+                                    Cosmos Laundromat (Test)
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Loading Section -->
+                <section id="loadingSection" class="loading-section hidden">
+                    <div class="loading-container">
+                        <div class="loading-spinner"></div>
+                        <h3 id="loadingTitle">Connecting to Torrent...</h3>
+                        <p id="loadingText">Please wait while we fetch the video metadata</p>
+                        <div class="loading-progress">
+                            <div class="progress-bar">
+                                <div id="progressFill" class="progress-fill"></div>
+                            </div>
+                            <p id="progressText">Initializing...</p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Video Player Section -->
+                <section id="playerSection" class="player-section hidden">
+                    <div class="video-container">
+                        <video 
+                            id="videoPlayer" 
+                            class="video-player" 
+                            controls
+                            preload="metadata"
+                            crossorigin="anonymous"
+                        >
+                            Your browser does not support the video tag.
+                        </video>
+                    
+                    <div class="video-info">
+                        <h3 id="videoTitle">Video Stream</h3>
+                        <div class="video-details">
+                            <span id="videoSize">Size: Loading...</span>
+                            <span id="torrentInfo">Torrent: Loading...</span>
+                        </div>
+                        <button id="backBtn" class="btn-secondary">
+                            ← Stream Another Video
+                        </button>
+                    </div>
+                </section>
+
+                <!-- Error Section -->
+                <section id="errorSection" class="error-section hidden">
+                    <div class="error-container">
+                        <div class="error-icon">❌</div>
+                        <h3>Streaming Error</h3>
+                        <p id="errorMessage">Something went wrong while trying to stream the video.</p>
+                        <div class="error-actions">
+                            <button id="retryBtn" class="btn-primary">Try Again</button>
+                            <button id="backToInputBtn" class="btn-secondary">Back to Input</button>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </main>
+
+        <!-- Toast Container -->
+        <div id="toastContainer" class="toast-container"></div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>

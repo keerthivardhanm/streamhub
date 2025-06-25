@@ -1,40 +1,56 @@
-# 🎬 StreamHub – Ultra-Fast Torrent Video Streaming App
+🎬 StreamHub – Ultra-Fast Torrent Video Streaming Application
 
-StreamHub is a blazing-fast, ad-free, and fully responsive web application that allows users to **stream video content directly from magnet links, torrent files, or direct video URLs** in real-time — without downloading.
+StreamHub is a high-performance, ad-free, and fully responsive web application that enables users to stream video content directly from magnet links, torrent files, or direct video URLs in real-time, eliminating the need for downloads. Designed for local device use, StreamHub provides a seamless streaming experience powered by decentralized peer-to-peer networks.
 
-Built with modern technologies like **WebTorrent**, **Node.js**, and **Vite**, StreamHub is designed to deliver a seamless, buffer-free experience powered by decentralized peer-to-peer networks.
+Developed using cutting-edge technologies such as WebTorrent, Node.js, and Vite, StreamHub is engineered to deliver a buffer-free experience directly on your local device.
 
----
+🚀 Key Features
 
-## 🚀 Features
+🎥 Instant Torrent Streaming: Users can paste a magnet URI and begin watching immediately on their local devices.
 
-- 🎥 **Instant Torrent Streaming** — Paste a magnet URI and start watching immediately.
-- ⏩ **Custom Video Controls** — 10s forward/back skip buttons + arrow key support.
-- 📂 **Automatic File Detection** — Auto-selects video file from torrent payload.
-- 📡 **Real-time Torrent Stats** — Displays download speed, peers, and file size.
-- 🌓 **Dark Mode UI** — Minimal, modern, and mobile-friendly interface.
-- 🌐 **CORS-enabled Express API** — Secure backend for cross-origin requests.
-- 🔁 **SPA-Friendly Routing** — Built with HTML5 history support and fallback routing.
+⏩ Custom Video Controls: Features include 10-second forward/backward skip buttons and arrow key support for enhanced navigation.
 
----
+📂 Automatic File Detection: Automatically selects the appropriate video file from the torrent payload.
 
-## 📦 Tech Stack
+📡 Real-time Torrent Statistics: Displays essential information such as download speed, number of peers, and file size.
 
-| Layer        | Technology        |
-|-------------|-------------------|
-| Frontend     | HTML5, CSS3, JavaScript, Vite |
-| Backend      | Node.js, Express.js |
-| Streaming Engine | WebTorrent (via WebRTC & HTTP range streaming) |
-| Deployment   | Bolt.dev / Vercel / Render / Custom VPS |
+🌓 Dark Mode User Interface: A minimalistic, modern, and mobile-friendly design.
 
----
+🌐 CORS-enabled Express API: A secure backend that supports cross-origin requests for local applications.
 
-## 🛠️ Installation & Setup
+🔁 Single Page Application (SPA) Friendly Routing: Built with HTML5 history support and fallback routing for improved user experience.
 
-> Requires: Node.js ≥ 16.x and a modern browser with WebRTC support
+📦 Technology Stack
 
-```bash
-# 1. Clone the repo
+Layer
+
+Technology
+
+Frontend
+
+HTML5, CSS3, JavaScript, Vite
+
+Backend
+
+Node.js, Express.js
+
+Streaming Engine
+
+WebTorrent (utilizing WebRTC & HTTP range streaming)
+
+Deployment
+
+Local Device (requires Node.js environment)
+
+🛠️ Installation & Setup
+
+Requirements: Node.js version 16.x or higher and a modern browser with WebRTC support.
+
+bash
+
+Run
+Copy code
+# 1. Clone the repository
 git clone https://github.com/yourusername/streamhub.git
 cd streamhub
 
@@ -42,35 +58,31 @@ cd streamhub
 cd server
 npm install
 
-# 3. Run backend server
+# 3. Run the backend server
 npm run dev
-# Server starts at http://localhost:3000
+# The server will start at http://localhost:3000
 
-# 4. Start frontend (if separate Vite setup)
+# 4. Start the frontend (if using a separate Vite setup)
 cd ../client
 npm install
 npm run dev
-
 🔗 API Endpoints
-POST /api/start – Start torrent using magnet URI
 
-GET /api/stream/:infoHash/:fileIndex – Stream video with HTTP Range support
+POST /api/start – Initiates torrent streaming using a magnet URI.
 
-GET /api/info/:infoHash – Get torrent stats
+GET /api/stream/:infoHash/:fileIndex – Streams video with HTTP Range support.
 
-GET /api/torrents – List active torrents
+GET /api/info/:infoHash – Retrieves torrent statistics.
 
-GET /api/health – Health check status
+GET /api/torrents – Lists all active torrents.
 
-📸 Preview
+GET /api/health – Checks the health status of the application.
 
 ⚖️ License
-This project is open-source and free to use under the MIT License.
+This project is open-source and available for use under the MIT License.
 
 👤 Author
 Keerthivardhan M
-🛠 Full Stack Developer | Cybersecurity Enthusiast | Building future-forward web experiences
+Full Stack Developer | Cybersecurity Enthusiast | Committed to building innovative web experiences
 📫 Connect on LinkedIn
 
-⭐️ Show Your Support
-If you like this project, please consider ⭐️ starring the repo and sharing it with your network!

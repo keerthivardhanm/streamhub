@@ -1,0 +1,52 @@
+# 🎬 StreamHub – Ultra-Fast Torrent Video Streaming App
+
+StreamHub is a blazing-fast, ad-free, and fully responsive web application that allows users to **stream video content directly from magnet links, torrent files, or direct video URLs** in real-time — without downloading.
+
+Built with modern technologies like **WebTorrent**, **Node.js**, and **Vite**, StreamHub is designed to deliver a seamless, buffer-free experience powered by decentralized peer-to-peer networks.
+
+---
+
+## 🚀 Features
+
+- 🎥 **Instant Torrent Streaming** — Paste a magnet URI and start watching immediately.
+- ⏩ **Custom Video Controls** — 10s forward/back skip buttons + arrow key support.
+- 📂 **Automatic File Detection** — Auto-selects video file from torrent payload.
+- 📡 **Real-time Torrent Stats** — Displays download speed, peers, and file size.
+- 🌓 **Dark Mode UI** — Minimal, modern, and mobile-friendly interface.
+- 🌐 **CORS-enabled Express API** — Secure backend for cross-origin requests.
+- 🔁 **SPA-Friendly Routing** — Built with HTML5 history support and fallback routing.
+
+---
+
+## 📦 Tech Stack
+
+| Layer        | Technology        |
+|-------------|-------------------|
+| Frontend     | HTML5, CSS3, JavaScript, Vite |
+| Backend      | Node.js, Express.js |
+| Streaming Engine | WebTorrent (via WebRTC & HTTP range streaming) |
+| Deployment   | Bolt.dev / Vercel / Render / Custom VPS |
+
+---
+
+## 🛠️ Installation & Setup
+
+> Requires: Node.js ≥ 16.x and a modern browser with WebRTC support
+
+```bash
+# 1. Clone the repo
+git clone https://github.com/yourusername/streamhub.git
+cd streamhub
+
+# 2. Install server dependencies
+cd server
+npm install
+
+# 3. Run backend server
+npm run dev
+# Server starts at http://localhost:3000
+
+# 4. Start frontend (if separate Vite setup)
+cd ../client
+npm install
+npm run dev

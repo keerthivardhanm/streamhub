@@ -1,92 +1,106 @@
-# 🎬 StreamHub – Ultra-Fast Torrent Video Streaming Application
+<h1 align="center">MKV 🎬 STREAMHUB</h1>
+<h3 align="center">🔗 Free Ultra-Fast Torrent Video Streaming Application | Powered by WebTorrent</h3>
 
-**StreamHub** is a blazing-fast, ad-free, and fully responsive web application that lets you stream videos directly from **magnet links**, **torrent files**, or **direct video URLs** — right in your browser.
+<p align="center">
+  <b>Stream movies and videos from Magnet Links or Torrents with ZERO BUFFERING. All Locally. No Ads.</b>
+</p>
 
-Powered by modern technologies like **WebTorrent**, **Node.js**, and **Vite**, StreamHub delivers a smooth, buffer-free video experience using decentralized peer-to-peer protocols — all locally on your device.
-
----
-
-## 🚀 Key Features
-
-- 🔗 **Instant Torrent Streaming** – Paste a magnet URI and stream instantly.
-- 🎛️ **Custom Video Controls** – Play, pause, skip 10s forward/back, and keyboard shortcuts.
-- 🔍 **Smart File Detection** – Automatically picks the primary video file from the torrent.
-- 📊 **Live Torrent Stats** – Shows peers, download speeds, file size, and more.
-- 🌙 **Dark Mode UI** – Clean, modern, and mobile-first design.
+<p align="center">
+  <img src="https://img.shields.io/badge/StreamHub-Fast%20and%20Secure-blue?style=for-the-badge" alt="StreamHub Badge"/>
+  <img src="https://img.shields.io/badge/Powered%20By-WebTorrent-success?style=for-the-badge"/>
+  <img src="https://img.shields.io/badge/Built%20With-Vite%20+%20Node.js-yellow?style=for-the-badge"/>
+</p>
 
 ---
 
-## 📦 Tech Stack
+## 🚀 OVERVIEW
 
-| Layer                | Technology                                       |
-|----------------------|--------------------------------------------------|
-| **Frontend**         | HTML5, CSS3, JavaScript, Vite                    |
-| **Backend**          | Node.js, Express.js                              |
-| **Streaming Engine** | WebTorrent (WebRTC + HTTP Range Streaming)       |
-| **Deployment**       | Runs locally (cross-platform with Node.js)       |
+**StreamHub** is a blazing-fast, ad-free, and fully responsive web application that lets users stream video content directly from:
+
+- ✅ **Magnet URIs**
+- ✅ **Torrent Files**
+- ✅ **Direct Video URLs**
+
+With **real-time torrent statistics**, auto-file detection, and smart streaming controls, StreamHub turns your browser into a powerful video player — no downloads, no delays.
 
 ---
 
-## 🛠️ Installation & Setup
+## 🧩 FEATURES AT A GLANCE
 
-### ⚙️ Prerequisites
+- 🎞️ **Instant Playback** – Paste any magnet link and start watching right away.
+- ⚡ **Buffer-Free Streaming** – Powered by decentralized peer-to-peer WebRTC.
+- 🎛️ **Custom Controls** – 10s skip, full keyboard support, and minimal UI.
+- 🧠 **Smart File Selector** – Auto-picks the main video file in multi-file torrents.
+- 🌘 **Dark Mode UI** – Responsive and modern design.
+- 📡 **Torrent Stats** – Real-time peers, speeds, and progress overview.
 
-- **Node.js**: v16.x or later
-- **Browser**: Any modern browser with WebRTC support (Chrome, Firefox, Edge)
+---
 
-### 📥 Steps to Install and Run
+## 💻 TECH STACK
+
+| Layer             | Technologies Used                                   |
+|------------------|-----------------------------------------------------|
+| **Frontend**      | HTML5, CSS3, JavaScript, Vite                       |
+| **Backend**       | Node.js, Express.js                                 |
+| **Streaming Core**| WebTorrent (WebRTC + HTTP Range Support)            |
+| **Deployment**    | Localhost (Dev Mode)                                |
+
+---
+
+## ⚙️ INSTALLATION & RUNNING
+
+> 💡 Make sure you have **Node.js v16+** and a **modern browser** with WebRTC support.
+
+### 🔧 QUICK START
 
 ```bash
-# 1. Clone the repository
+# Clone the repository
 git clone https://github.com/keerthivardhanm/streamhub.git
 cd streamhub
 
-# 2. Install dependencies
+# Install all dependencies
 npm install
 
-# 3. Start the application (both backend + frontend)
+# Start the full stack application (frontend + backend)
 npm run dev
-🟢 By default:
+🔗 Access:
 
-Backend runs on http://localhost:3000
+Frontend: http://localhost:5173
 
-Frontend (Vite dev server) runs on http://localhost:5173
+Backend: http://localhost:3000
 
-📡 API Endpoints (Backend)
-Method	Endpoint	Description
-POST	/api/start	Starts streaming a torrent using a magnet link
-GET	/api/stream/:infoHash/:fileIndex	Streams video using HTTP range support
-GET	/api/info/:infoHash	Returns metadata & stats of the torrent
-GET	/api/torrents	Lists active torrent sessions
-GET	/api/health	Returns app health status
-
-🧪 Development Notes
-If you're working on a monorepo:
-
-bash
+🧪 DEVELOPER STRUCTURE
+pgsql
 Copy
 Edit
-/streamhub
-  ├── client   # Vite frontend app
-  └── server   # Express backend with WebTorrent
-Make sure npm run dev in root is configured to run both servers via concurrently or a similar tool:
-
+streamhub/
+├── client/      # Frontend (Vite app)
+├── server/      # Backend (Express server with WebTorrent)
+├── package.json # Runs both via npm run dev
+📦 Add This to package.json in Root:
 json
 Copy
 Edit
-// package.json
 "scripts": {
   "dev": "concurrently \"npm run dev --prefix server\" \"npm run dev --prefix client\""
 }
-Install concurrently:
-
 bash
 Copy
 Edit
+# Install concurrently if needed
 npm install concurrently --save-dev
-⚖️ License
+📡 API ENDPOINTS
+Method	Route	Description
+POST	/api/start	Start streaming from a magnet URI
+GET	/api/stream/:infoHash/:fileIndex	Stream a selected video file
+GET	/api/info/:infoHash	Retrieve torrent metadata & stats
+GET	/api/torrents	List all active torrents
+GET	/api/health	Application health check
+
+📜 LICENSE
 This project is licensed under the MIT License.
 
-👤 Author
+👨‍💻 AUTHOR
 Keerthivardhan M
-Full Stack Developer | Cybersecurity Enthusiast
+🎯 Full Stack Developer • 🛡 Cybersecurity Enthusiast
+📬 Connect on LinkedIn
